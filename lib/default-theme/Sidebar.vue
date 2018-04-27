@@ -1,7 +1,16 @@
+<!--
+@Author: Dingjia
+@Date:   2018-04-27T20:56:03+08:00
+@Last modified by:   Dingjia
+@Last modified time: 2018-04-27T23:33:07+08:00
+-->
+
+
+
 <template>
   <div class="sidebar">
     <NavLinks/>
-    <slot name="top"/>
+    <!-- <slot name="top"/> -->
     <ul class="sidebar-links" v-if="items.length">
       <li v-for="(item, i) in items">
         <SidebarGroup v-if="item.type === 'group'"

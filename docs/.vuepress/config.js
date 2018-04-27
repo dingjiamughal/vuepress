@@ -1,3 +1,12 @@
+/**
+ * @Author: Dingjia
+ * @Date:   2018-04-27T20:56:02+08:00
+ * @Last modified by:   Dingjia
+ * @Last modified time: 2018-04-28T00:29:47+08:00
+ */
+
+
+
 module.exports = {
   dest: 'vuepress',
   base:'/vuepress/',
@@ -8,11 +17,11 @@ module.exports = {
       title: 'Mughal Ding',
       description: "It’s been kind of tough, But tough people last."
     },
-    '/en/': {
-      lang: 'en-US',
-      title: 'Mughal Ding',
-      description: "It’s been kind of tough, But tough people last."
-    }
+    // '/en/': {
+    //   lang: 'en-US',
+    //   title: 'Mughal Ding',
+    //   description: "It’s been kind of tough, But tough people last."
+    // }
   },
   description:"丁佳，丁佳的个人博客",
   head: [
@@ -29,7 +38,7 @@ module.exports = {
   serviceWorker: true,
   theme: 'vue',
   themeConfig: {
-    repo: 'dingjiamughal.github.io/vuepress',
+    repo: 'dingjiamughal/vuepress',
     editLinks: true,
     docsDir: 'docs',
     // sidebarDepth: 2,
@@ -40,24 +49,19 @@ module.exports = {
         editLinkText: 'Edit this page on GitHub',
         nav: [
           {
-            text: 'Guide',
-            link: '/en/guide/',
-          },
-          {
             text: 'Webpack',
             link: '/en/webpack/'
           },
           {
-            text: 'Default Theme Config',
-            link: '/en/default-theme-config/'
-          },
-          {
             text: 'Blog',
             link: '/en/blog/'
-          }
+          },
+          {
+            text: 'About me',
+            link: '/en/aboutme/'
+          },
         ],
         sidebar: {
-          '/en/guide/': genSidebarConfig('Guide'),
           '/en/blog/': genSidebarBlogConfig(),
           '/en/webpack/':genSidebarWebpackConfig()
         }
@@ -69,24 +73,19 @@ module.exports = {
         editLinkText: '在 GitHub 上编辑此页',
         nav: [
           {
-            text: '指南',
-            link: '/guide/',
-          },
-          {
             text: 'Webpack',
             link: '/webpack/'
           },
           {
-            text: '默认主题',
-            link: '/default-theme-config/'
+            text: 'Blog',
+            link: 'http://www.xhrsama.com'
           },
           {
-            text: 'Blog',
-            link: '/blog/'
+            text: '关于我',
+            link: '/aboutme/'
           }
         ],
         sidebar: {
-          '/guide/': genSidebarConfig('指南'),
           '/blog/': genSidebarBlogConfig(),
           '/webpack/':genSidebarWebpackConfig()
         }
