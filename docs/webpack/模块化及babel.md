@@ -112,3 +112,62 @@ module:{
   ]
 }
 ```
+
+## esLint
+`eslint-loader`
+::: tip 下载依赖
+cnpm install eslint eslint-loader eslint-plugin-html eslint-friendly-formatter --save-dev
+:::
+
+代码规范：[JavaScript Standard Style](https://standardjs.com)
+```js
+rules:[{
+  test:/\.js$/,
+  use:[{
+    loader:"babel-loader",
+    options:{
+      presets:{
+        presets:["env"]
+      }
+    }
+  },{
+    //在babel-loader之前检测语法错误
+    loader:"eslint-loader",
+    options:{
+      formatter:require("eslint-friendly-formatter")
+    }
+  }]
+}]
+```
+另加`.eslitrc.js`
+::: tip 下载依赖
+cnpm install eslint-config-standard eslint-plugin-promise eslint-plugin-node eslint-plugin-import eslint-plugin-standard --save-dev
+:::
+
+```js
+// .eslitrc.js
+module.exports = {
+  root:true,
+  extends："standard",
+  plugins:[],
+  env:{//所支持的环境
+    browser:true,
+    node:true,
+  },
+  rules:{//添加规则
+    indent:["error",4],
+    "eol-last":["error","never"]
+  }
+}
+// webpack.conf.js
+devServer:{
+  overlay:true,//在浏览器中显示eslint报错信息
+},
+module:{
+  rules:[{
+    test:/\.js$/,
+    include:[path.resolve(__dirname,"src"],
+    exclude:[path.resolve(__dirname,"src/libs")]//eslint不处理这边文件
+  }]
+}
+```
