@@ -2,7 +2,7 @@
  * @Author: Dingjia
  * @Date:   2018-04-27T20:56:02+08:00
  * @Last modified by:   Dingjia
- * @Last modified time: 2018-04-28T00:29:47+08:00
+ * @Last modified time: 2018-05-02T22:30:39+08:00
  */
 
 
@@ -78,7 +78,7 @@ module.exports = {
           },
           {
             text: 'Blog',
-            link: 'http://www.xhrsama.com'
+            link: '/blog/'
           },
           {
             text: '关于我',
@@ -144,6 +144,8 @@ function genSidebarConfig (title) {
 
 function genSidebarBlogConfig() {
   return [
+
+    'fontendBuild',
     {
       title: 'javascript',
       collapsable: true,
