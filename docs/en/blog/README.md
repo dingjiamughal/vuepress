@@ -122,7 +122,7 @@ module.exports = {
 
 **也可以参考:**
 
-- [默认主题](../default-theme-config/)。
+<!-- - [默认主题](../default-theme-config/)。 -->
 
 ## Markdown
 

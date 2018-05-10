@@ -149,7 +149,7 @@ function genSidebarBlogConfig() {
     {
       title: 'javascript',
       collapsable: true,
-      children: ['javascript/啊啊啊']
+      children: ['javascript/es6类']
     }, {
       title: 'nginx',
       collapsable: true,
