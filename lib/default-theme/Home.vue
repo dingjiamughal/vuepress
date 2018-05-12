@@ -57,13 +57,15 @@ export default {
       margin 3rem auto 1.5rem
     h1
       font-size 3rem
+      // color #909399
     h1, .description, .action
       margin 1.8rem auto
     .description
       max-width 35rem
       font-size 1.6rem
       line-height 1.3
-      color lighten($textColor, 40%)
+      // color lighten($textColor, 40%)
+      color lighten(#409EFF, 40%)
     .action-button
       display inline-block
       font-size 1.2rem

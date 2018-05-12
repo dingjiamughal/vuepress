@@ -15,7 +15,7 @@ module.exports = {
     '/': {
       lang: 'zh-CN',
       title: 'Mughal Ding',
-      description: "It’s been kind of tough, But tough people last."
+      description: "你知道的 你是我奋斗的动力"
     },
     // '/en/': {
     //   lang: 'en-US',
@@ -146,6 +146,8 @@ function genSidebarBlogConfig() {
   return [
 
     'fontendBuild',
+    'interview',
+    'fe-optimize',
     {
       title: 'javascript',
       collapsable: true,

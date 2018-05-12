@@ -1,3 +1,3 @@
-# 配置
+# BLOG
 
-## 基本配置123
+老版blog地址 [`xhrsama.com`](https://www.xhrsama.com)
