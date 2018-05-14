@@ -15,7 +15,7 @@ module.exports = {
     '/': {
       lang: 'zh-CN',
       title: 'Mughal Ding',
-      description: "你知道的 你是我奋斗的动力"
+      description: "你知道的 你微笑时好美"
     },
     // '/en/': {
     //   lang: 'en-US',

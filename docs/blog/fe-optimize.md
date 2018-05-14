@@ -50,3 +50,17 @@ import component1 from '@dir/xxx'
 
 const  component1 = item => require.ensure( [], () => item(require('@dir/xxx')))
 ```
+
+## 图片优化
+
+## css和js装载和执行
+-
+## 懒加载和预加载
+::: tip 懒加载
+加载在可视区域的图片，监听scroll事件
+:::
+应用场景：滚轮scroll，加载图片src内容。例如手淘首页（图片加载）
+::: tip 预加载
+页面资源加载完毕之后，进行页面渲染
+:::
+应用场景：。。。
