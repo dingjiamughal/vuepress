@@ -2,7 +2,7 @@
 home: true
 heroImage: /heroImg.jpeg
 actionText: 开始 →
-actionLink: /webpack/
+actionLink: /blog/
 
 <!-- features:
 - title: Webpack

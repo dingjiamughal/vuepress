@@ -64,3 +64,40 @@ const  component1 = item => require.ensure( [], () => item(require('@dir/xxx')))
 页面资源加载完毕之后，进行页面渲染
 :::
 应用场景：。。。
+
+### 懒加载
+```js
+const viewHeight = document.documentElement.clientHeight //可是区域的高度
+
+function lazyLoad() {
+  let eles = document.querySelectorAll("img[data-original][lazyload]")
+  Array.prototype.forEach.call(eles,(item,index) => {
+    if(item.dataset.original === '') {
+      return
+    }
+    let rect = item.getBoundingClientRect()
+    if(rect.bottom >= 0 && rect.top < viewHeight) {
+      !function() {
+        let img = new Image()
+        img.src = item.dataset.original
+        img.onload = function() {
+          item.src = img.src
+        }
+        item.removeAttribute("data-original")
+        item.removeAttribute("lazyload")
+      }()
+    }
+  })
+}
+
+document.addEventListener("scroll", lazyload)
+```
+
+### 预加载
+- 直接html写img src标签
+- new Image() 预加载
+- ajax
+
+```js
+
+```

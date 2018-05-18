@@ -9,7 +9,7 @@
 
 module.exports = {
   dest: 'vuepress',
-  base:'/vuepress/',
+  base:'/',
   port:9090,
   locales: {
     '/': {
@@ -81,7 +81,11 @@ module.exports = {
             link: '/blog/'
           },
           {
-            text: '关于我',
+            text: 'Resume',
+            link: 'https://www.xhrsama.com/resume/'
+          },
+          {
+            text: 'About me',
             link: '/aboutme/'
           }
         ],
@@ -144,11 +148,16 @@ function genSidebarConfig (title) {
 
 function genSidebarBlogConfig() {
   return [
-
-    'fontendBuild',
-    'interview',
-    'fe-optimize',
     {
+      title: 'dingjia',
+      collapsable: true,
+      children: [
+          'fontendBuild',
+          'interview-1',
+          'interview-2',
+          'fe-optimize',
+        ]
+    },{
       title: 'javascript',
       collapsable: true,
       children: ['javascript/es6类']
@@ -162,7 +171,13 @@ function genSidebarBlogConfig() {
         children: [
           'css/box-model'
         ]
-      }
+      },{
+          title: 'vue',
+          collapsable: true,
+          children: [
+            'vue/vue-plugin'
+          ]
+        }
   ]
 }
 

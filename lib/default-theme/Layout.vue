@@ -3,6 +3,14 @@
     :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd">
+    <div class="bdsharebuttonbox">
+      <a href="#" class="bds_more" data-cmd="more"></a>
+      <a href="#" class="bds_qzone" data-cmd="qzone"></a>
+      <a href="#" class="bds_tsina" data-cmd="tsina"></a>
+      <a href="#" class="bds_tqq" data-cmd="tqq"></a>
+      <a href="#" class="bds_renren" data-cmd="renren"></a>
+      <a href="#" class="bds_weixin" data-cmd="weixin"></a>
+    </div>
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
     <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
     <Sidebar :items="sidebarItems" @toggle-sidebar="toggleSidebar">
@@ -29,7 +37,30 @@ import Page from './Page.vue'
 import Sidebar from './Sidebar.vue'
 import { pathToComponentName } from '@app/util'
 import { resolveSidebarItems } from './util'
+// import {sdk} from '@app/wxjssdk'
+// console.log(window)
 
+// window._bd_share_config = {
+//   "common": {
+//     "bdSnsKey": {},
+//     "bdText": "",
+//     "bdMini": "2",
+//     "bdMiniList": false,
+//     "bdPic": "",
+//     "bdStyle": "0",
+//     "bdSize": "16"
+//   },
+//   "share": {},
+//   "image": {
+//     "viewList": ["qzone", "tsina", "tqq", "renren", "weixin", "duitang"],
+//     "viewText": "分享到：",
+//     "viewSize": "16"
+//   },
+//   "selectShare": {
+//     "bdContainerClass": null,
+//     "bdSelectMiniList": ["qzone", "tsina", "tqq", "renren", "weixin", "duitang"]
+//   }
+// };
 export default {
   components: { Home, Page, Sidebar, Navbar },
   data () {
