@@ -5,12 +5,10 @@
  * @Last modified time: 2018-05-02T22:30:39+08:00
  */
 
-
-
 module.exports = {
   dest: 'vuepress',
-  base:'/',
-  port:9090,
+  base: '/',
+  port: 9090,
   locales: {
     '/': {
       lang: 'zh-CN',
@@ -23,17 +21,63 @@ module.exports = {
     //   description: "It’s been kind of tough, But tough people last."
     // }
   },
-  description:"丁佳，丁佳的个人博客",
+  description: "丁佳，丁佳的个人博客",
   head: [
-    ['link', { rel: 'icon', href: `/logo.png` }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
-    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
-    ['link', { rel: 'apple-touch-icon', href: `/icons/apple-touch-icon-152x152.png` }],
-    ['link', { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#3eaf7c' }],
-    ['meta', { name: 'msapplication-TileImage', content: '/icons/msapplication-icon-144x144.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+    [
+      'link', {
+        rel: 'icon',
+        href: `/logo.png`
+      }
+    ],
+    [
+      'link', {
+        rel: 'manifest',
+        href: '/manifest.json'
+      }
+    ],
+    [
+      'meta', {
+        name: 'theme-color',
+        content: '#3eaf7c'
+      }
+    ],
+    [
+      'meta', {
+        name: 'apple-mobile-web-app-capable',
+        content: 'yes'
+      }
+    ],
+    [
+      'meta', {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'black'
+      }
+    ],
+    [
+      'link', {
+        rel: 'apple-touch-icon',
+        href: `/icons/apple-touch-icon-152x152.png`
+      }
+    ],
+    [
+      'link', {
+        rel: 'mask-icon',
+        href: '/icons/safari-pinned-tab.svg',
+        color: '#3eaf7c'
+      }
+    ],
+    [
+      'meta', {
+        name: 'msapplication-TileImage',
+        content: '/icons/msapplication-icon-144x144.png'
+      }
+    ],
+    [
+      'meta', {
+        name: 'msapplication-TileColor',
+        content: '#000000'
+      }
+    ]
   ],
   serviceWorker: true,
   theme: 'vue',
@@ -51,19 +95,17 @@ module.exports = {
           {
             text: 'Webpack',
             link: '/en/webpack/'
-          },
-          {
+          }, {
             text: 'Blog',
             link: '/en/blog/'
-          },
-          {
+          }, {
             text: 'About me',
             link: '/en/aboutme/'
-          },
+          }
         ],
         sidebar: {
           '/en/blog/': genSidebarBlogConfig(),
-          '/en/webpack/':genSidebarWebpackConfig()
+          '/en/webpack/': genSidebarWebpackConfig()
         }
 
       },
@@ -75,75 +117,76 @@ module.exports = {
           {
             text: 'Webpack',
             link: '/webpack/'
-          },
-          {
+          }, {
             text: 'Blog',
             link: '/blog/'
-          },
-          {
+          }, {
             text: 'Resume',
             link: 'https://www.xhrsama.com/resume/'
-          },
-          {
+          }, {
             text: 'About me',
             link: '/aboutme/'
+          }, {
+            text: ' ',
+            link: '/NM$L6324UpUp/'
           }
         ],
         sidebar: {
           '/blog/': genSidebarBlogConfig(),
-          '/webpack/':genSidebarWebpackConfig()
+          '/webpack/': genSidebarWebpackConfig(),
+
         }
       }
     }
   }
 }
 
-function genSidebarConfig (title) {
+function genSidebarConfig(title) {
   return [
-  {
-    title: 'Group 1',
-    collapsable: true,
-    children: [
-      '/',
-      'aaa/aaa',
-      'basic-config',
-      'assets',
-      'markdown',
-      'using-vue',
-      'custom-themes',
-      'i18n',
-      'deploy'
-    ]
-  }, {
-    title: 'Group 2',
-    collapsable: true,
-    children: [
-      '/',
-      'getting-started',
-      'basic-config',
-      'assets',
-      'markdown',
-      'using-vue',
-      'custom-themes',
-      'i18n',
-      'deploy'
-    ]
-  }, {
-    title: 'Group 3',
-    collapsable: true,
-    children: [
-      '/',
-      'getting-started',
-      'basic-config',
-      'assets',
-      'markdown',
-      'using-vue',
-      'custom-themes',
-      'i18n',
-      'deploy'
-    ]
-  }
-]
+    {
+      title: 'Group 1',
+      collapsable: true,
+      children: [
+        '/',
+        'aaa/aaa',
+        'basic-config',
+        'assets',
+        'markdown',
+        'using-vue',
+        'custom-themes',
+        'i18n',
+        'deploy'
+      ]
+    }, {
+      title: 'Group 2',
+      collapsable: true,
+      children: [
+        '/',
+        'getting-started',
+        'basic-config',
+        'assets',
+        'markdown',
+        'using-vue',
+        'custom-themes',
+        'i18n',
+        'deploy'
+      ]
+    }, {
+      title: 'Group 3',
+      collapsable: true,
+      children: [
+        '/',
+        'getting-started',
+        'basic-config',
+        'assets',
+        'markdown',
+        'using-vue',
+        'custom-themes',
+        'i18n',
+        'deploy'
+      ]
+    }
+  ]
 }
 
 function genSidebarBlogConfig() {
@@ -151,42 +194,80 @@ function genSidebarBlogConfig() {
     {
       title: 'dingjia',
       collapsable: true,
-      children: [
-          'fontendBuild',
-          'interview-1',
-          'interview-2',
-          'fe-optimize',
-        ]
+      children: ['fontendBuild', 'interview-1', 'interview-2','interview-3', 'fe-optimize']
     },{
+      title: 'html',
+      collapsable: true,
+      children: [
+        'html/canvas-1',
+        'html/canvas-2',
+        'html/canvas-3',
+      ]
+    }, {
+      title: 'css',
+      collapsable: true,
+      children: [
+        'css/box-model',
+        'css/box-shadow',
+        'css/css-center',
+        'css/css3-loading',
+        'css/fan',
+        'css/gradient',
+        'css/less',
+        'css/transform-transition-animation',
+        'css/word-wrap',
+      ]
+    }, {
       title: 'javascript',
       collapsable: true,
-      children: ['javascript/es6类']
+      children: [
+        'javascript/BOM',
+        'javascript/ES5ArrayApi',
+        'javascript/es6类',
+        'javascript/javaScript-1',
+        'javascript/javaScript-2',
+        'javascript/javaScript-3',
+        'javascript/javaScript-chainUse',
+        'javascript/js-scope',
+        'javascript/jsMath',
+        'javascript/lazyLoad',
+        'javascript/mianshi',
+        'javascript/requireJs',
+        'javascript/tween'
+      ]
+    },{
+      title: 'es6',
+      collapsable: true,
+      children: [
+        'es6/es6-1',
+        'es6/es6-2',
+        'es6/es6-3',
+        'es6/es6-4',
+        'es6/es6-5'
+      ]
     }, {
       title: 'nginx',
       collapsable: true,
       children: ['nginx/nginxtest1']
-    },{
-        title: 'css',
-        collapsable: true,
-        children: [
-          'css/box-model'
-        ]
-      },{
-          title: 'vue',
-          collapsable: true,
-          children: [
-            'vue/vue-plugin'
-          ]
-        }
+    }, {
+      title: 'vue',
+      collapsable: true,
+      children: [
+        'vue/template',
+        'vue/vue-animation',
+        'vue/vue-plugin',
+        'vue/webpackLink'
+      ]
+    }
   ]
 }
 
 function genSidebarWebpackConfig() {
   return [
     {
-      title:'Webpack',
+      title: 'Webpack',
       collapsable: false,
-      children:[
+      children: [
         '',
         '模块化及babel',
         '打包css',

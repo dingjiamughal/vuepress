@@ -1,6 +1,8 @@
 # BLOG
 
-[`新版blog`](https://www.xhrsama.com)已部署完毕，旧版内容迁移未完成，预计这周末之前完全上线
+[`新版blog`](https://www.xhrsama.com)已部署完毕，内容迭代仍未完成<br>
+主题风格基于next和element-ui<br>
+有好的样式或者主题推荐，欢迎issue我的[blog源码仓库](https://github.com/dingjiamughal/vuepress)
 
 ## 版本改变
 - http -> https
