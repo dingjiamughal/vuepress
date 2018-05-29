@@ -18,10 +18,12 @@ Vue.use(Plugin)
 
 ## 扩展组件功能
 e.g生成一个简单的div组件<br>
-step1：新建`func-plugin.js`来声明扩展组件，作为继承组件，可以覆盖.vue文件中的数据
+step1：新建`func-plugin.js`来声明扩展组件，作为继承组件，可以覆盖.vue文件中的数据。<br>
+就是所谓的：你的就是我的，我的还是我的
 ```js
 import Plugin from "./plugin.vue"
 
+// extends声明 这样就能关联起vue组件和js配置项文件
 export default {
   extends: Plugin,
   computed:{

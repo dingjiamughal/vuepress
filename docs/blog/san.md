@@ -104,3 +104,15 @@ san `san-mui`
 <!-- san -->
 <div class="{{isActive ? 'active' : ''}} errorClass"></div>
 ```
+
+<demo-1 :title="title"></demo-1>
+<script>
+export default {
+
+  data() {
+    return {
+      title:"hahahahhahha!"
+    }
+  }
+}
+</script>  

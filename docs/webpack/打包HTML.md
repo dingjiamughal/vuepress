@@ -1,16 +1,17 @@
 # 打包HTML
+
 生成html自动自动识别引入css和js文件
-`HtmlWebpackPlugin`
+`html-webpack-plugin`
 >cnpm install html-webpack-plugin --save-dev
 
 ```js
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 plugins:[
   new HtmlWebpackPlugin({
-    filename:"index.html",
-    template:"./index.html",
+    filename:"index.html",// 输出的dist路劲
+    template:"./index.html",//需要打包的src路径
     inject:false, //剔除生产版本引人的css和js
-    chunks:["app"],//指定chunks，进行文件分割
+    chunks:["app","base",...],//指定chunks，进行文件分割
     minify:{
       collapseWhitespace:true//html不留间隙
     }
@@ -19,6 +20,7 @@ plugins:[
 ```
 
 ## HTML中引入图片
+
 * 方法一 `html-loader`
 ```js
 module:{

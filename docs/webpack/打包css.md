@@ -1,10 +1,12 @@
 # 处理css
 
+## style-loader && css-loader
 webpack处理css方式是通过webpack的css-loader对css文件进行打包，用js来对css进行加载
 
 需要的加载器
-`style-loader` 创建link标签</br>
-`css-loader` 能在js引入css文件
+`style-loader` 创建style标签</br>
+`css-loader` 能在js引入css文件<br>
+配置的顺序是从后往前，先能在js中解析css，然后再吧解析完成的js文件转化成css的style标签
 ::: tip 下载依赖
 cnpm install css-loader style-loader --save-dev
 :::
@@ -27,6 +29,7 @@ cnpm install css-loader style-loader --save-dev
     module:{
       rules:[{
         test:/\.css$/,
+        // use中放置loader和相关配置
         use:[{//顺序是先让js中支持import css再放到页面中进行加载
           loader:"style-loader",
           options:{
@@ -45,7 +48,7 @@ cnpm install css-loader style-loader --save-dev
     }
   }
 ```
-style-loader中的transform参数的作用
+## style-loader中的transform参数的作用
 单独在根目录下创建文件，`css.transform.js`在此文件中可以进行js对css的逻辑处理，比如获取window对象，判断浏览器版本对所有的css文件进行操作
 ```js
 // css.transform.js
@@ -76,8 +79,10 @@ modules:{
 ```
 
 ## 提取css
+以上完成了解析css和生成style标签，最终的生产版本需要通过`link`标签引用于页面，在环境变量是生产环境的时候需要提取css
+
 ::: tip 下载依赖
->cnpm install extract-text-webpack-plugin --save-dev
+cnpm install extract-text-webpack-plugin --save-dev
 :::
 
 ```js
@@ -133,7 +138,7 @@ cnpm install postcss postcss-loader autoprefixer cssnano postcss-next --save-dev
     display:flex;
   }
 ```
-`css-nano` 优化和压缩css,css-loader中也使用css-nano进行压缩
+`css-nano` 优化和压缩css,css-loader中也使用css-nano进行压缩<br>
 
 `postcss-next` 可以使用未来的css新语法
 

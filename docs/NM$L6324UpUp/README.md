@@ -21,7 +21,7 @@
 - [我的github](https://github.com/dingjiamughal)
 - [我的website](https://www.xhrsama.com/)
 - [html模块化的gulp插件](https://www.npmjs.com/package/gulp-htm-include) npm install gulp-htm-include --save-dev
-- [简约的easyspa组件库v-dj-component](https://www.xhrsama.com/djUi/)
+- [简约的easyspa组件库v-dj-component](https://github.com/dingjiamughal/djui)
 
 
 <p align="right" style="margin-bottom:0;"><font size=4>申请人：<ins>丁佳</ins></font></p>

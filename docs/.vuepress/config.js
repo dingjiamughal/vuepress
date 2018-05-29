@@ -215,24 +215,24 @@ function genSidebarBlogConfig() {
         'css/gradient',
         'css/less',
         'css/transform-transition-animation',
-        'css/word-wrap',
+        // 'css/word-wrap',
       ]
     }, {
       title: 'javascript',
       collapsable: true,
       children: [
-        'javascript/BOM',
+        // 'javascript/BOM',
+        'javascript/requireJs',
+        'javascript/mianshi',
         'javascript/ES5ArrayApi',
         'javascript/es6类',
         'javascript/javaScript-1',
         'javascript/javaScript-2',
         'javascript/javaScript-3',
-        'javascript/javaScript-chainUse',
         'javascript/js-scope',
+        'javascript/javaScript-chainUse',
         'javascript/jsMath',
         'javascript/lazyLoad',
-        'javascript/mianshi',
-        'javascript/requireJs',
         'javascript/tween'
       ]
     },{

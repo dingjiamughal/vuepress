@@ -1,7 +1,7 @@
 # webpack和vue
 
 ### vue-cli
-```js
+``` shell
 npm install vue-cli -g
 vue init webpack projectName
 ```
