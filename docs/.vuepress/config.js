@@ -233,7 +233,14 @@ function genSidebarBlogConfig() {
         'javascript/javaScript-chainUse',
         'javascript/jsMath',
         'javascript/lazyLoad',
-        'javascript/tween'
+        'javascript/tween',
+        'javascript/regularExpression'
+      ]
+    },{
+      title: 'http',
+      collapsable: true,
+      children: [
+        'http/http'
       ]
     },{
       title: 'es6',
@@ -256,7 +263,8 @@ function genSidebarBlogConfig() {
         'vue/template',
         'vue/vue-animation',
         'vue/vue-plugin',
-        'vue/webpackLink'
+        'vue/webpackLink',
+        'vue/jsxInVue'
       ]
     }
   ]
