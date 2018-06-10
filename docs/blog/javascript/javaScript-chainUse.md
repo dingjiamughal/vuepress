@@ -1,5 +1,5 @@
 # 简述链式调用
-链式调用的关键是`return this`，但是不是封装一个函数在里面写上`return this`就可以链式调用了呢？当然不行，其实链式调用并不是因为`return this` <!-- more --> 看个例子
+链式调用的关键是`return this`，但是不是封装一个函数在里面写上`return this`就可以链式调用了呢？当然不行，其实链式调用并不是因为`return this` 看个例子
 
 ```js
 var fn1 = function () {
