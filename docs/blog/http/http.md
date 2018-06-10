@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # http/https
 
 简单的例子
@@ -32,3 +33,24 @@ GET 获取
 POST  创建
 PUT 更新
 DELETE 删除
+=======
+# http
+
+### 创建一个node服务
+```js
+const http = require("http")
+const fs = require("fs")
+
+http.createServer((req,res) => {
+  console.log(req.response)
+  const html = fs.readFileSync('xxx.html','utf8')
+  res.writeHead(200,{
+    'Content-type': 'text/html',
+    'Access-Control-Allow-Origin':'*'
+  })
+  res.end(html)
+}).listen(8080)
+```
+
+### 跨域
+>>>>>>> 4300416ea64434ecbf25b7553c755b0a05090f9e
