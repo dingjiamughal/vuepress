@@ -32,3 +32,20 @@ app.html
 
 ### 默认布局
 layouts
+
+<!-- ------------------------------------------------ -->
+### 项目分析
+第一页 overview
+数据获取(从上至下)
+
+```
+vuex 结构：
+state ---> slider
+mutations ---> setSliderDate
+actions ---> getSlisderDate
+
+```
+
+1：基础数据
+2：页面数据
+- slider `2` nuxt的fetch阶段获取数据，执行action的commit方法

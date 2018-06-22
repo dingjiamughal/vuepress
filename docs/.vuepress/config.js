@@ -105,7 +105,8 @@ module.exports = {
         ],
         sidebar: {
           '/en/blog/': genSidebarBlogConfig(),
-          '/en/webpack/': genSidebarWebpackConfig()
+          '/en/webpack/': genSidebarWebpackConfig(),
+          '/construe/':genSidebarconstrueConfig()
         }
 
       },
@@ -129,12 +130,15 @@ module.exports = {
           }, {
             text: ' ',
             link: '/NM$L6324UpUp/'
+          },{
+            text: 'ai-store',
+            link:'/construe/'
           }
         ],
         sidebar: {
           '/blog/': genSidebarBlogConfig(),
           '/webpack/': genSidebarWebpackConfig(),
-
+          '/construe/':genSidebarconstrueConfig()
         }
       }
     }
@@ -289,6 +293,22 @@ function genSidebarWebpackConfig() {
         '优化打包速度',
         '多页应用打包',
         'webpack&&vue'
+      ]
+    }
+  ]
+}
+
+function genSidebarconstrueConfig() {
+  return [
+    {
+      title: 'construe',
+      collapsable: false,
+      children: [
+
+        'proiect-desc',
+        'list-tree',
+        'tech-stack',
+        'data-request'
       ]
     }
   ]
