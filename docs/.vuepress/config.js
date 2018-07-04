@@ -130,9 +130,6 @@ module.exports = {
           }, {
             text: ' ',
             link: '/NM$L6324UpUp/'
-          },{
-            text: 'ai-store',
-            link:'/construe/'
           }
         ],
         sidebar: {
@@ -250,11 +247,12 @@ function genSidebarBlogConfig() {
       title: 'es6',
       collapsable: true,
       children: [
-        'es6/es6-1',
-        'es6/es6-2',
-        'es6/es6-3',
-        'es6/es6-4',
-        'es6/es6-5'
+        // 'es6/es6-1',
+        // 'es6/es6-2',
+        // 'es6/es6-3',
+        // 'es6/es6-4',
+        // 'es6/es6-5'
+        'es6/es6'
       ]
     }, {
       title: 'nginx',
