@@ -1,6 +1,6 @@
 <p style="text-align:center;"><font size=6>辞职报告</font></p>
 
-::: tip <font size=4>尊敬的领导们：</font>
+<!-- ::: tip <font size=4>尊敬的领导们：</font>
 请允许我以这种很FE的方式来写辞职报告:blush:
 :::
 
@@ -25,4 +25,5 @@
 
 
 <p align="right" style="margin-bottom:0;"><font size=4>申请人：<ins>丁佳</ins></font></p>
-<p align="right"><font size=4>申请时间：<u>2018</u>年<u>5</u>月<u>24</u>日</font></p>
+<p align="right"><font size=4>申请时间：<u>2018</u>年<u>5</u>月<u>24</u>日</font></p> -->
+bu gei kan la ~~~

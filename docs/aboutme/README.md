@@ -7,7 +7,7 @@ web前端开发工程师<br>
 <!-- <p style="color:#E6A23C;"><span>只会写写样式，</span><span style="color:#67C23A;">别的都不会，</span><span style="color:#F56C6C">逻辑也很差，</span><span style="color:#909399;">Gucci Gucci Prada Prada</span></p> -->
 
 ## project
-- AI市场 [http://ai.baidu.com/market/](http://ai.baidu.com/market/)<br>
+- AI市场 [http://ai.baidu.com/market/](http://ai.baidu.com/market/) <br>
 技术栈：pug、less、vue、nuxt、es6、webpack
 
 ## 联系我
