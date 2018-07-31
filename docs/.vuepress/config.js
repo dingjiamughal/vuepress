@@ -195,7 +195,7 @@ function genSidebarBlogConfig() {
     {
       title: 'dingjia',
       collapsable: true,
-      children: ['fontendBuild', 'interview-1', 'interview-2','interview-3', 'fe-optimize','san']
+      children: ['fontendBuild', 'daily', 'interview-1', 'interview-2','interview-3', 'fe-optimize','san']
     },{
       title: 'html',
       collapsable: true,

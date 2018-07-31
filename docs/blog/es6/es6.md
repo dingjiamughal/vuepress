@@ -43,6 +43,23 @@ arr.map(([x,y]) => ({...y,"id":x}))
 ]
 ```
 
+```js
+// 对象传递
+let obj = {
+    a: 1,
+    b: 2,
+    c: 3
+}
+const {
+    a,
+    others
+} = {
+    ...obj
+}
+
+// a -> {b: 2, c: 3}
+```
+
 ## 数组扩展
 新增的数组特性
 `from`、`of` <br>
@@ -185,14 +202,14 @@ let es6 = {
 
 ### Object新增api
 
-- Object.is 等同于 `===`
+Object.is 等同于 `===`
 
 ```js
 Object.is('aaa','aaa') // true
 Object.is([],[]) // false
 ```
 
-- Object.assign(obj1,obj2) 拷贝自身属性，把后者值赋给前者。不能拷贝枚举和继承属性
+Object.assign(obj1,obj2) 拷贝自身属性，把后者值赋给前者。不能拷贝枚举和继承属性
 
 ```js
 let a = {
@@ -210,7 +227,7 @@ Object.assign(a,b); // { a:4,b:2,c:3,d:5 }
 // b -> { a:4,d:5 }
 ```
 
-- Object.keys/values/entries
+Object.keys/values/entries
 
 ```js
 let a = {
@@ -362,36 +379,328 @@ m.delete('a') // m: {'b' => 456}
 ```
 ### 遍历 keys/values/entries/forEach
 
+```js
+let m = new Map([[1,'a'],[2,'b']]);
+
+for (let key of m.keys()) {
+    console.log(key); // 1,2
+}
+
+for (let values of m.values()) {
+    console.log(value); // 'a','b'
+}
+
+for (let [key,value] of m.entries()) {
+    console.log(key,value); // 1 'a',2 'b'
+}
+```
+
 ## Map-Set与数组对象横向对比
 
-### Map和数组的对比
+### Map/Set 与数组的对比
 
-#### 增
+### 增
 ```js
 let m = new Map();
+let s = new Set();
 m.set('t', 1);
+s.add({t: 1});
 array.push({t: 1});
 ```
 
-#### 查
+### 查
 ```js
 let m = new Map(['t', 1]);
+let s = new Set({t: 1});
 m.has('t');
+s.has({t: 1});
 array.find(item => item.t);
 ```
 
-#### 改
+### 改
 ```js
 let m = new Map(['t', 1]);
+let s = new Set({t: 1});
 m.set('t', 2);
+s.forEach(item -> item.t ? item.t = 2: '');
 array.forEach(item => item.t ? item.t = 2 : '');
 ```
 
-#### 删
+### 删
 ```js
-map.delete('t');
+let m = new Map(['t', 1]);
+let s = new Set({t: 1});
+m.delete('t');
+s.forEach(item => item.t ? s.delete(item));
 array.findIndex(item => item.t);
 array.splice(index, 1);
 ```
 
-### Set和数组的对比
+### Map/Set和对象的对比
+
+### 增
+```js
+let obj = {};
+let item = {t: 1};
+let m = new Map();
+let s = new Set();
+
+m.set('t', 1);
+s.add(item);
+obj['t'] = 1;
+```
+
+### 查
+```js
+m.has('t');
+s.has(item);
+'t' in obj
+```
+
+### 改
+```js
+m.set('t', 2);
+item.t = 2; / s.forEach()
+obj['t'] = 2;
+```
+
+### 删
+```js
+m.delete('t');
+s.delete(item);
+delete obj['t'];
+```
+
+数据结构复杂情况：优先使用Map，去重情况下用Set，放弃使用Object和Array。
+
+## Proxy和Reflect
+
+## Class
+Class是构造函数的语法糖，语法和构造函数对比
+```js
+// 构造函数
+function Point(x, y) {
+    tyis.x = x;
+    this.y = y;
+}
+Point.prototype.toString = () => {
+    return `(${this.x},${this.y})`;
+}
+const p = new Point(1, 2);
+```
+
+```js
+// Class
+let toArray = `toArray`;
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    toString() {
+        return `(${this.x},${this.y})`;
+    }
+
+    // 可以定义成变量
+    [toArray]() {
+        return Array.from(x,y);
+    }
+}
+const p = new Point(1, 2);
+```
+`Point.prototype.constructor === Point`
+
+### 不可枚举
+```js
+Object.keys(Point.prototype) // []
+Object.getOwnPropertyNames(Point.prototype) // ['constructor', 'toString']
+```
+
+### 私有属性
+
+私有属性，即实例对象无法调用
+```js
+const bar = Symbol('bar');
+
+class myClass {
+    foo() {
+        console.log('foo');
+    }
+
+    [bar]() {
+        console.log('bar');
+    }
+}
+
+const m = new myClass();
+m.foo(); // 'foo'
+m.bar(); // undefined
+```
+
+## Iterator遍历器
+`iterator`是用来处理不同数据结构的。可以让所有数据结构都可以使用for...of循环遍历
+```js
+let arr = ['a', 'b'];
+let map = arr[Symbol.iterator]();
+map.next() // { value: "a", done: false }
+map.next() // { value: "b", done: false }
+map.next() // { value: undefined, done: true }
+```
+一个数据结构只要有`Symbol.interator`属性，就可以认为是可遍历的iterator，当然原生的类型已经具备了`iterator`的特性，所以可以直接使用for...of：
+`Array`
+`Map`
+`Set`
+`String`
+`TypedArray`
+`函数的 arguments 对象`
+`NodeList 对象`
+
+### 为对象添加Iterator
+```js
+let obj = {
+    data: ['hello', 'world'],
+    [Symbol.iterator]() {
+        const self = this;
+        let index = 0;
+        return {
+            next() {
+                if (index < self.data.length) {
+                    return {
+                        value: self.data[index++],
+                        done: false
+                    }
+                }
+                else {
+                    return {
+                        value: undefined,
+                        done: true
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
+## Generator
+异步编程的解决方案
+```js
+// generator的基本定义
+// generator函数只有在调用next的时候才执行
+function* gen() {
+    yield 'a';
+    yield 'b';
+    return 'c';
+}
+gen(); // gen{}
+let g = gen();
+g.next();
+g.next();
+g.next();
+```
+
+### generator和iterator的关系
+```js
+let obj = {};
+let fn = function() {
+    console.log('yield ctx');
+}
+obj[Symbol.iterator] = function* () {
+    yield 1;
+    yield fn();
+}
+for (let value of obj) {
+    console.log(value);
+}
+console.log([...obj]);
+```
+
+### 异步操作
+```js
+let state = async function() {
+    await 'a';
+    await 'b';
+    await 'c';
+}
+let status = state();
+status.next();
+```
+
+### 应用场景
+- 前端做限制次数（全局变量影响性能而且不安全）
+- 长轮询
+
+```js
+// 业务逻辑放一个函数
+// 次数控制放generator函数
+let count = function(count) {
+    console.log(`剩余${count}次`);
+    // 一些操作...
+}
+let residue= function* (count) {
+    while (count>0) {
+        count --;
+    }
+    yield count(count);
+}
+let star = residue(5);
+$('button').click(function() {
+    star.next();
+});
+```
+
+```js
+let ajax = function* () {
+    yield new Promise((resolve,reject) => {
+        $.ajax({
+            ...,
+            success() {
+                resolve();
+            }
+        });
+    });
+}
+
+let pull = () => {
+    let generator = ajax();
+    let step = generator.next();
+    step.value.then(d => {
+        if (!d.xxxxx) {
+            setTimeout(() => {
+                pull();
+            },1000);
+        }
+        else {
+            console.log('end');
+        }
+    });
+}
+
+pull();
+```
+
+## 修饰器Decorator
+安装一个babel插件`transform-decorators-lagacy`
+用于修饰class的行为，即对类的扩展
+```js
+let readonly = (target, name, desc) {
+    desc.writable = false;
+    return desc;
+}
+
+class Test {
+    @readonly
+    time() {
+        return '2018-7-16';
+    }
+}
+let test = new Test();
+
+console.log(test.time()); // '2018-7-16'
+
+test.time = () => {
+    console.log('change');
+}
+console.log(test.time()); // 报错！
+```
