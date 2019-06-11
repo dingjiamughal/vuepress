@@ -1,0 +1,28 @@
+{
+    "apps": [
+        {
+            "name": "blog",
+            "script": "app.js",
+            "env": {
+                "COMMON_VARIABLE": "true"
+            },
+            "env_production": {
+                "NODE_ENV": "production"
+            }
+        }
+    ],
+    "deploy": {
+        "production": {
+            "user": "root",
+            "host": ["47.100.106.196"],
+            "port": "22",
+            "ref": "origin/master",
+            "repo": "https://github.com/dingjiamughal/vuepress.git",
+            "path": "/www/website/production",
+            "ssh_options": "StrictHostKeyChecking=no",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    }
+}
