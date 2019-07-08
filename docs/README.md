@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /heroImg.jpeg
+heroImage: /heroImg.png
 actionText: 开始 →
 actionLink: /aboutme/
 
