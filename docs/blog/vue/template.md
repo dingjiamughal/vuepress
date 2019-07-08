@@ -14,9 +14,9 @@ methods:{
     this.$emit('clickbtn')//别的照旧，这条语句表示传递方法给father
   }
 }
-```js
-父组件接收事件：
 ```
+父组件接收事件：
+```js
 <hello father="fathera" v-on:clickbtn="incrementTotal"></hello>//事件名称
 methods:{
   incrementTotal:function(){
