@@ -156,55 +156,6 @@ module.exports = {
     }
 };
 
-function genSidebarConfig(title) {
-    return [
-        {
-            title: 'Group 1',
-            collapsable: true,
-            children: [
-                '/',
-                'aaa/aaa',
-                'basic-config',
-                'assets',
-                'markdown',
-                'using-vue',
-                'custom-themes',
-                'i18n',
-                'deploy'
-            ]
-        },
-        {
-            title: 'Group 2',
-            collapsable: true,
-            children: [
-                '/',
-                'getting-started',
-                'basic-config',
-                'assets',
-                'markdown',
-                'using-vue',
-                'custom-themes',
-                'i18n',
-                'deploy'
-            ]
-        },
-        {
-            title: 'Group 3',
-            collapsable: true,
-            children: [
-                '/',
-                'getting-started',
-                'basic-config',
-                'assets',
-                'markdown',
-                'using-vue',
-                'custom-themes',
-                'i18n',
-                'deploy'
-            ]
-        }
-    ];
-}
 
 function genSidebarBlogConfig() {
     return [
@@ -213,7 +164,6 @@ function genSidebarBlogConfig() {
             collapsable: true,
             children: [
                 'fontendBuild',
-                'daily',
                 'interview-1',
                 'interview-2',
                 'interview-3',
@@ -258,8 +208,7 @@ function genSidebarBlogConfig() {
                 'javascript/jsMath',
                 'javascript/lazyLoad',
                 'javascript/tween',
-                'javascript/regularExpression',
-                'javascript/防抖节流'
+                'javascript/regularExpression'
             ]
         },
         {
@@ -300,6 +249,13 @@ function genSidebarBlogConfig() {
             collapsable: true,
             children: [
                 'node/blog'
+            ]
+        },
+        {
+            title: 'daily',
+            collapsable: true,
+            children: [
+                'daily/防抖节流'
             ]
         }
     ];

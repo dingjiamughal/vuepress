@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # http/https
 
 简单的例子
@@ -33,8 +32,6 @@ GET 获取
 POST  创建
 PUT 更新
 DELETE 删除
-=======
-# http
 
 ### 创建一个node服务
 ```js
@@ -53,4 +50,3 @@ http.createServer((req,res) => {
 ```
 
 ### 跨域
->>>>>>> 4300416ea64434ecbf25b7553c755b0a05090f9e
